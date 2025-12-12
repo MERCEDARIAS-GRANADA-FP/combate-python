@@ -3,13 +3,13 @@ from Habilidad import Habilidad
 
 
 class Coche(Criatura):
-    itv = False
-    habilidades = [
-        Habilidad("Quemar rueda", 15),
-        Habilidad("Atropellar", 10)
-    ]
     def __init__(self, nombre, planeta_origen):
         super().__init__(nombre, planeta_origen)
+        self.itv = False
+        self.habilidades = [
+            Habilidad("Quemar rueda", 15),
+            Habilidad("Atropellar", 10)
+        ]
 
     def copiar(self):
         clon = super().copiar()
