@@ -3,13 +3,13 @@ from Habilidad import Habilidad
 
 
 class Coche(Criatura):
-    itv = False
-    habilidades = [
-        Habilidad("Quemar rueda", 15),
-        Habilidad("Atropellar", 10)
-    ]
     def __init__(self, nombre, planeta_origen):
         super().__init__(nombre, planeta_origen)
+        self.itv = False
+        self.habilidades = [
+            Habilidad("Quemar rueda", 15),
+            Habilidad("Atropellar", 10)
+        ]
 
     def copiar(self):
         clon = super().copiar()
@@ -21,7 +21,6 @@ class Coche(Criatura):
         print(f"{self.nombre} dice: BRRRoooom BRRRoooom Tutututututu (sonido de coche)")
     def evolucionar(self):
         super().evolucionar()
-        self.nivel+=1
-        if (self.nivel>5):
-            itv = True
+        if self.nivel > 5:
+            self.itv = True
             print(f"Ahora {self.nombre} pasa la ITV")
