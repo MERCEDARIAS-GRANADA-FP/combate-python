@@ -21,6 +21,6 @@ class Coche(Criatura):
         print(f"{self.nombre} dice: BRRRoooom BRRRoooom Tutututututu (sonido de coche)")
     def evolucionar(self):
         super().evolucionar()
-        if (self.nivel>5):
+        if self.nivel > 5:
             self.itv = True
             print(f"Ahora {self.nombre} pasa la ITV")
